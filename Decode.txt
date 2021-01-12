@@ -1,0 +1,17 @@
+                                              Decode  Program  Explanation
+                                              
+    Inorder  to  count  the number of decoding possible a function countDecoding is implemented  with parameters a char array and int n.A table to store result of 
+    subproblems is also implemented. For the base condition (“01123”) zero is returned.
+
+if (digits[i - 1] > '0') 
+  count[i] = count[i - 1];
+   If the last digit is not 0,then last digit must add to the number of words.
+if (digits[i - 2] == '1' || 
+          (digits[i - 2] == '2' && 
+          digits[i - 1] < '7'))   
+            
+            count[i] += count[i - 2];
+ If the second last digit is smaller than 2 and last digit is smaller than 7 then last two digits form a valid character.
+
+On executing the code we will get the count of number of decoding possible.
+                                          
